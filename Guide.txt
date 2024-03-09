@@ -1,0 +1,35 @@
+--- Hưỡng dẫn chạy chương trình ---
+
+1, Kết nối Sql
+
+Bước 1: Giải nén file SMS_SQL.rar được 3 file: .mdf, ldf và file SMS.
+Bước 2: Tạo một folder trong ổ D rồi copy 3 file trên vào.
+Bước 3: Click chuột phải >> Chọn Properties >> Security >> Chọn Group or user names: Authenticated Users >> Edit >> Chọn Group or user names: User máy của bạn >> Chon allow ở full control >> Apply >> Ok >> Ok.
+Bước 4: Mở SQL Server Management Studio Management Studio 19 (Tùy từng phiên bản sẽ có tên khác nhau) >> Click chuột phải Databases >> Chọn Attach... >> Add >> Chọn thư mục lưu file .mdf (ở ổ đia D) >> Ok >> Ok.
+Bước 5: Data SourceVào file SalesManagementSystem >> Mở file SalesManagementSystem.sln >> Chọn Tools trên thành công cụ >> Chọn "Connect to Database..." 
+>> Chọn Microsoft SQL Server >> Continue >> Chọn Server name: là tên Server name khi mở Server Management Studio Management Studio 19 >> Chọn database bạn cần kết nối ở Select or enter a database name: >> Chọn Advenced...
+>> Copy đường dẫn kết nối SQL ở Data Source >> Vào folder Model trong Solution Exporer >> Vào ConnectToSQL.cs >> Mở Construstor >> Chuyển giá trị StrCon thành Data Source vừa copy.
+
+2, Cài đặt môi trường cho chức năng import dữ liệu từ excel
+
+Bước 1: Right click project trong Solution Explorer >> Chọn Manage NuGet Packages >> Tìm kiếm và cài đặt ExcelDataReader, ExcelDataReader.DataSet và Z.Dapper.Plus.
+Bước 2: Vào các form có tên là importDataBill, importDataClient( Có đuôi importData) trong Solution Explorer >> Click chuột vào nút import >> Sửa lại đường dẫn connectionString thành đường dẫn kết nối SQL ở Data Source giống như ở trên
+
+
+--- Instructions to run the program ---
+
+1, Connect Sql
+
+Step 1: Extract SMS_SQL.rar file to get 3 files: .mdf, ldf and SMS file.
+Step 2: Create a folder in drive D and then copy the 3 files above.
+Step 3: Right-click >> Select Properties >> Security >> Select Group or user names: Authenticated Users >> Edit >> Select Group or user names: User of your device >> Select allow in full control >> Apply >> Ok >> Ok.
+Step 4: Open SQL Server Management Studio Management Studio 19 (Depending on the version, the name will be different) >> Right-click Databases >> Select Attach... >> Add >> Select the folder to save the .mdf file (in the drive) Dia D) >> Ok >> Ok.
+Step 5: Data Source Go to the file SalesManagementSystem >> Open the file SalesManagementSystem.sln >> Select Tools on the toolbar >> Select "Connect to Database..."
+>> Select Microsoft SQL Server >> Continue >> Select Server name: is the Server name when opening Server Management Studio Management Studio 19 >> Select the database you need to connect at Select or enter a database name: >> Select Advanced...
+>> Copy the SQL connection path in the Data Source >> Go to the Model folder in the Solution Explorer >> Go to ConnectToSQL.cs >> Open the Construstor >> Convert the StrCon value to the copied Data Source.
+
+2, Setting the environment for the function to import data from excel
+
+Step 1: Right click project in Solution Explorer >> Select Manage NuGet Packages >> Search and install ExcelDataReader, ExcelDataReader.DataSet and Z.Dapper.Plus.
+Step 2: Go to the form named importDataBill, importDataClient (with the extension importData) in Solution Explorer >> Click on the import button >> Modify the connectionString path to the SQL connection path in the Data Source like above
+
